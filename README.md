@@ -1,5 +1,5 @@
 # prime-library.js
-yet another implementation of prime-library in javascript
+javascript library to deal with prime numbers
 
 [![Build Status](https://travis-ci.org/x4d3/prime-library.js.svg?branch=master)](https://travis-ci.org/x4d3/prime-library.js)
 
