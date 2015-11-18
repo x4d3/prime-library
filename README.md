@@ -1,9 +1,9 @@
-# prime-factor.js
-yet another implementation of prime-factor in javascript
+# prime-library.js
+yet another implementation of prime-library in javascript
 
-[![Build Status](https://travis-ci.org/x4d3/prime-factor.js.svg?branch=master)](https://travis-ci.org/x4d3/prime-factor.js)
+[![Build Status](https://travis-ci.org/x4d3/prime-library.js.svg?branch=master)](https://travis-ci.org/x4d3/prime-library.js)
 
-Landing page can be found here: (http://x4d3.github.io/prime-factor.js/)
+Landing page can be found here: (http://x4d3.github.io/prime-library.js/)
 
 Installation
 ------------
