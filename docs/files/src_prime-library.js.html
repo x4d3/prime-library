@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/prime-library.js - prime-library.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="prime-library.js" src="../assets/css/logo.png" style="max-height: 65%;" title="prime-library.js">
+            prime-library.js
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PrimeLibrary"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/PrimeLibrary.html">PrimeLibrary</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/prime-library.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+PrimeLibrary = (function() {
+	/**
+	 * Static methods to deal with prime numbers
+	 * @class PrimeLibrary
+	 */
+	var PrimeLibrary = {};
+	var checkType = function(value, type) {
+		if (typeof value !== type) {
+			throw &quot;It should be a &quot; + type + &quot;: &quot; + value;
+		}
+		return value;
+	};
+	var checkIsNumber = function(value) {
+		return checkType(value, &#x27;number&#x27;);
+	};
+	var checkIsInt = function(value) {
+		checkIsNumber(value);
+		if (value % 1 !== 0) {
+			throw &quot;It should be an int: &quot; + value;
+		}
+		return value;
+	};
+
+	/**
+	 * @static
+	 * @method leastFactor
+	 * @returns {Number} the smallest prime that divides n
+	 */
+	PrimeLibrary.leastFactor = function(n) {
+		checkIsInt(n);
+		if (n === 0)
+			return 0;
+		if (n === 1)
+			return 1;
+		if (n % 2 === 0)
+			return 2;
+		if (n % 3 === 0)
+			return 3;
+		if (n % 5 === 0)
+			return 5;
+		var m = Math.sqrt(n);
+		for (var i = 7; i &lt;= m; i += 30) {
+			if (n % i === 0)
+				return i;
+			if (n % (i + 4) === 0)
+				return i + 4;
+			if (n % (i + 6) === 0)
+				return i + 6;
+			if (n % (i + 10) === 0)
+				return i + 10;
+			if (n % (i + 12) === 0)
+				return i + 12;
+			if (n % (i + 16) === 0)
+				return i + 16;
+			if (n % (i + 22) === 0)
+				return i + 22;
+			if (n % (i + 24) === 0)
+				return i + 24;
+		}
+		return n;
+	};
+
+	/**
+	 * @static
+	 * @method isPrime
+	 * @returns {Boolean} true if n is prime
+	 */
+	PrimeLibrary.isPrime = function(n) {
+		checkIsInt(n);
+		return n === PrimeLibrary.leastFactor(n);
+	};
+
+	/**
+	 * @static
+	 * @method factor
+	 * @returns {Array} the prime factorization of n
+	 */
+	PrimeLibrary.factor = function(n) {
+		checkIsInt(n);
+		if (n &lt; 0) {
+			throw &#x27;n should be positive&#x27;;
+		}
+		var result = [];
+		do {
+			minFactor = PrimeLibrary.leastFactor(n);
+			result.push(minFactor);
+			n /= minFactor;
+		} while (n != 1);
+		return result;
+	};
+
+	/**
+	 * @static
+	 * @method nextPrime
+	 * @returns {Number} the smallest prime greater than n
+	 */
+	PrimeLibrary.nextPrime = function(n) {
+		checkIsInt(n);
+		if (n &lt; 2)
+			return 2;
+		for (var i = n + 1; i &lt; 9007199254740992; i++) {
+			if (PrimeLibrary.isPrime(i))
+				return i;
+		}
+		return NaN;
+	};
+
+	return PrimeLibrary;
+})();
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

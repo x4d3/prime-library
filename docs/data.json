@@ -1,0 +1,103 @@
+{
+    "project": {
+        "name": "prime-library.js",
+        "description": "library to deal with prime numbers",
+        "version": "1.0.0",
+        "url": "http://x4d3.github.io/prime-library.js/"
+    },
+    "files": {
+        "src/prime-library.js": {
+            "name": "src/prime-library.js",
+            "modules": {},
+            "classes": {
+                "PrimeLibrary": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "PrimeLibrary": {
+            "name": "PrimeLibrary",
+            "shortname": "PrimeLibrary",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/prime-library.js",
+            "line": 2,
+            "description": "Static methods to deal with prime numbers"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/prime-library.js",
+            "line": 24,
+            "static": 1,
+            "itemtype": "method",
+            "name": "leastFactor",
+            "return": {
+                "description": "the smallest prime that divides n",
+                "type": "Number"
+            },
+            "class": "PrimeLibrary"
+        },
+        {
+            "file": "src/prime-library.js",
+            "line": 63,
+            "static": 1,
+            "itemtype": "method",
+            "name": "isPrime",
+            "return": {
+                "description": "true if n is prime",
+                "type": "Boolean"
+            },
+            "class": "PrimeLibrary"
+        },
+        {
+            "file": "src/prime-library.js",
+            "line": 73,
+            "static": 1,
+            "itemtype": "method",
+            "name": "factor",
+            "return": {
+                "description": "the prime factorization of n",
+                "type": "Array"
+            },
+            "class": "PrimeLibrary"
+        },
+        {
+            "file": "src/prime-library.js",
+            "line": 92,
+            "static": 1,
+            "itemtype": "method",
+            "name": "nextPrime",
+            "return": {
+                "description": "the smallest prime greater than n",
+                "type": "Number"
+            },
+            "class": "PrimeLibrary"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/prime-library.js:24"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/prime-library.js:63"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/prime-library.js:73"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/prime-library.js:92"
+        }
+    ]
+}
