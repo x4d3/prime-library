@@ -32,6 +32,9 @@ module.exports = function(grunt) {
 			}
 		},
 		uglify : {
+			options : {
+				banner : '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>  <%= pkg.homepage %> */'
+			},
 			dist : {
 				files : {
 					'target/prime-library.min.js' : [ 'target/prime-library.js' ]

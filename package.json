@@ -16,7 +16,7 @@
 	"bugs" : {
 		"url" : "https://github.com/x4d3/prime-library.js/issues"
 	},
-	"homepage" : "https://github.com/x4d3/prime-library.js",
+	"homepage" : "http://x4d3.github.io/prime-library.js/",
 	"dependencies" : {
 		"grunt" : "~0.4.5",
 		"grunt-lib-phantomjs" : "0.7.1",
